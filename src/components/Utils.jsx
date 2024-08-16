@@ -24,7 +24,7 @@ export default function Utils() {
     return (
         <section className="border-b border-white/20">
             <div>
-                <div className="w-80 bg-white/10 cursor-pointer rounded-sm py-1 px-2 m-2 relative z-20" onClick={() => setDropdown(prev => !prev)}>
+                <div className="w-80 bg-neutral-900 cursor-pointer rounded-sm py-2 px-4 m-2 relative z-20" onClick={() => setDropdown(prev => !prev)}>
                     <div className="flex flex-row justify-between items-center">
                         <p className="text-white">♫ &gt; {getKeyByValue(streams, selectedStream).toUpperCase()}</p>
                         <Image 
@@ -35,10 +35,10 @@ export default function Utils() {
                         />
                     </div>
                     {dropdown ? (
-                        <ul className="absolute text-white overflow-hidden border fade-in border-white/10 bg-stone-800/20 backdrop-blur-xl shadow-md rounded-sm top-full left-0 w-full flex flex-col mt-1">
+                        <ul className="absolute text-white overflow-hidden border fade-in border-white/10 bg-neutral-800/20 backdrop-blur-xl shadow-md rounded-sm top-full left-0 w-full flex flex-col mt-1">
                             {streams.map((e, i) => {
                                 return (
-                                    <li className="px-4 py-2 hover:bg-stone-300/5 duration-50" onClick={() => setSelectedStream(e.id)}>{e.title}</li>
+                                    <li className="px-4 py-2 hover:bg-neutral-300/5 duration-50" onClick={() => setSelectedStream(e.id)}>{e.title}</li>
                                 )
                             })}
                         </ul>

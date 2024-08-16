@@ -24,8 +24,8 @@ export default function TodoList(props) {
     }, [list])
 
     return (
-        <section className="bg-white/5 rounded-sm mx-2 mb-2 text-white">
-            <div className="flex flex-row justify-between bg-white/5 p-2">
+        <section className="bg-neutral-900 rounded-sm mx-2 mb-2 text-white">
+            <div className="flex flex-row justify-between p-2">
                 <h2 className="font-bold tracking-wide">Todo</h2>
                 <Image
                     src={PlusIcon}
