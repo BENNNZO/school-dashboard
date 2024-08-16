@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 
-import TrashIcon from '@/assets/trash.svg'
-import PlusIcon from '@/assets/plus.svg'
+import TrashIcon from '/public/assets/trash.svg'
+import PlusIcon from '/public/assets/plus.svg'
 
 export default function TodoList(props) {
     const { localKey } = props
@@ -15,12 +15,8 @@ export default function TodoList(props) {
         const storedArray = localStorage.getItem(localKey)
         
         if (storedArray) {
-            const myArray = JSON.parse(storedArray)
-            console.log(myArray)
             setList(JSON.parse(storedArray))
         }
-        console.log(localKey)
-        console.log(props.localKey)
     }, [])
 
     useEffect(() => {

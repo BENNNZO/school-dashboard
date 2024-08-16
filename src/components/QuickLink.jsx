@@ -1,5 +1,3 @@
-import Image from "next/image"
-
 export default function QuickLink(props) {
     const { title, link } = props
 
