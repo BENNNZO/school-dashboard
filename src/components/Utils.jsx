@@ -59,7 +59,7 @@ export default function Utils() {
                 </div>
             </div>
             <ul className="flex flex-row gap-4">
-                <li className="bg-stone-900/50 cursor-pointer hover:bg-stone-900 duration-100 rounded-sm grid place-items-center border border-neutral-800/50">
+                <li className="bg-neutral-900/50 cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm grid place-items-center border border-neutral-800/50">
                     <a href="https://selfservice.gmc.cc.ga.us/Student/?hideProxyDialog=false" target="_blank">
                         <Image
                             src={PortalIcon}
@@ -69,7 +69,7 @@ export default function Utils() {
                         />
                     </a>
                 </li>
-                <li className="bg-stone-900/50 cursor-pointer hover:bg-stone-900 duration-100 rounded-sm grid place-items-center border border-neutral-800/50">
+                <li className="bg-neutral-900/50 cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm grid place-items-center border border-neutral-800/50">
                     <a href="https://outlook.office.com/owa/student.gmc.cc.ga.us" target="_blank">
                         <Image
                             src={MailIcon}
@@ -79,7 +79,7 @@ export default function Utils() {
                         />
                     </a>
                 </li>
-                <li className="bg-stone-900/50 cursor-pointer hover:bg-stone-900 duration-100 rounded-sm grid place-items-center border border-neutral-800/50">
+                <li className="bg-neutral-900/50 cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm grid place-items-center border border-neutral-800/50">
                     <a href="https://chatgpt.com" target="_blank">
                         <Image
                             src={ChatGPTIcon}
