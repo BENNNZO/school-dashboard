@@ -1,7 +1,6 @@
 "use client"
 
-import AudioPlayer from "react-modern-audio-player"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 export default function Utils() {
     const [selectedStream, setSelectedStream] = useState("https://www.youtube.com/embed/jfKfPfyJRdk?si=W3hxSFDVBYkkMfQ-?autoplay=1");
@@ -14,22 +13,13 @@ export default function Utils() {
     }]
 
     const streams = {
-        chill: 'https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1',
-        beats: 'https://www.youtube.com/embed/DWcJFNfaw9c?autoplay=1',
-        jazz: 'https://www.youtube.com/embed/7NOSDKb0HlU?autoplay=1',
-        jazz2: 'https://www.youtube.com/embed/jfKfPfyJRdk?si=W3hxSFDVBYkkMfQ-?autoplay=1',
+        chill: 'https://www.youtube.com/embed/5qap5aO4i9A',
+        beats: 'https://www.youtube.com/embed/DWcJFNfaw9c',
+        jazz: 'https://www.youtube.com/embed/7NOSDKb0HlU',
     }
 
     return (
         <section className="border-b border-white/20">
-            {/* <AudioPlayer
-                playList={playlist}
-                activeUI={{
-                    all: true,
-                    progress: "waveform",
-                }}
-                style
-            /> */}
             <div>
                 <h3>Select a Stream</h3>
                 <select onChange={(e) => setSelectedStream(streams[e.target.value])}>
