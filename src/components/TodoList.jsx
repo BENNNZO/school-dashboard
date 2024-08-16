@@ -24,7 +24,7 @@ export default function TodoList(props) {
     }, [list])
 
     return (
-        <section className="bg-neutral-900/50 rounded-sm mx-2 mb-2 text-white">
+        <section className="bg-neutral-900/50 rounded-sm mx-2 mb-2 text-white border border-neutral-800/50">
             <div className="flex flex-row justify-between p-2">
                 <h2 className="font-bold tracking-wide">Todo</h2>
                 <Image
@@ -42,7 +42,7 @@ export default function TodoList(props) {
             </div>
             <ul>
                 {list.map((e, i) => (
-                    <div key={i} className="border-t border-white/20 py-1.5 flex flex-row justify-between group px-2">
+                    <div key={i} className="border-t border-neutral-800/50 py-1.5 flex flex-row justify-between group px-2">
                         <p>{e}</p>
                         <Image
                             src={TrashIcon}
