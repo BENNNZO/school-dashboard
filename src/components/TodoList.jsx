@@ -24,14 +24,14 @@ export default function TodoList(props) {
     }, [list])
 
     return (
-        <section className="bg-neutral-900 rounded-sm mx-2 mb-2 text-white">
+        <section className="bg-neutral-900/50 rounded-sm mx-2 mb-2 text-white">
             <div className="flex flex-row justify-between p-2">
                 <h2 className="font-bold tracking-wide">Todo</h2>
                 <Image
                     src={PlusIcon}
                     width={25}
                     height={25}
-                    className="invert bg-black/20 w-7 aspect-square my-auto rounded-sm hover:bg-black/30 duration-100"
+                    className="invert bg-black/10 w-7 aspect-square my-auto rounded-sm hover:bg-black/20 duration-100 cursor-pointer"
                     alt="add todo button"
                     onClick={() => {
                         let text = prompt("TODO")
@@ -49,7 +49,7 @@ export default function TodoList(props) {
                             width={25}
                             height={25}
                             alt="delete todo button"
-                            className="opacity-0 group-hover:opacity-100 duration-100 hover:bg-red-400/20 w-6 p-1 rounded-sm"
+                            className="opacity-0 group-hover:opacity-100 duration-100 hover:bg-red-400/20 w-6 p-1 rounded-sm cursor-pointer"
                             onClick={() => setList(prev => {
                                 let newArr = [...prev]
                                 newArr.splice(i, 1)

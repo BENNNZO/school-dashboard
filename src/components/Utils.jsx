@@ -27,7 +27,7 @@ export default function Utils() {
     return (
         <section className="border-b border-white/20 flex flex-row justify-between items-center p-2">
             <div>
-                <div className="w-80 bg-neutral-900 cursor-pointer rounded-sm py-2 px-4 relative z-20" onClick={() => setDropdown(prev => !prev)}>
+                <div className="w-80 bg-neutral-900/50 cursor-pointer rounded-sm py-2 px-4 relative z-20" onClick={() => setDropdown(prev => !prev)}>
                     <div className="flex flex-row justify-between items-center">
                         <p className="text-white">♫ &gt; {getKeyByValue(streams, selectedStream).toUpperCase()}</p>
                         <Image 
@@ -59,7 +59,7 @@ export default function Utils() {
                 </div>
             </div>
             <ul className="flex flex-row gap-4">
-                <li className="bg-stone-900 cursor-pointer hover:bg-stone-800 duration-100 rounded-sm grid place-items-center">
+                <li className="bg-stone-900/50 cursor-pointer hover:bg-stone-900 duration-100 rounded-sm grid place-items-center">
                     <a href="https://selfservice.gmc.cc.ga.us/Student/?hideProxyDialog=false" target="_blank">
                         <Image
                             src={PortalIcon}
@@ -69,7 +69,7 @@ export default function Utils() {
                         />
                     </a>
                 </li>
-                <li className="bg-stone-900 cursor-pointer hover:bg-stone-800 duration-100 rounded-sm grid place-items-center">
+                <li className="bg-stone-900/50 cursor-pointer hover:bg-stone-900 duration-100 rounded-sm grid place-items-center">
                     <a href="https://outlook.office.com/owa/student.gmc.cc.ga.us" target="_blank">
                         <Image
                             src={MailIcon}
@@ -79,7 +79,7 @@ export default function Utils() {
                         />
                     </a>
                 </li>
-                <li className="bg-stone-900 cursor-pointer hover:bg-stone-800 duration-100 rounded-sm grid place-items-center">
+                <li className="bg-stone-900/50 cursor-pointer hover:bg-stone-900 duration-100 rounded-sm grid place-items-center">
                     <a href="https://chatgpt.com" target="_blank">
                         <Image
                             src={ChatGPTIcon}

@@ -14,15 +14,18 @@ export default function Home() {
 				<div className="flex flex-row h-full justify-around gap-px bg-white/20">
 					<ClassSection title={"Algebra"}>
 						<QuickLink title={"Moodle"} link="https://gmc.mrooms3.net/course/view.php?id=81166" />
+						<QuickLink title={"Syllabus"} link="https://gmc.mrooms3.net/mod/book/view.php?id=7046287&chapterid=439071" />
 						<QuickLink title={"MyLab"} link="https://mylabmastering.pearson.com/?courseId=12966713#/" />
 					</ClassSection>
 					
 					<ClassSection title={"Leadership"}>
 						<QuickLink title={"Moodle"} link="https://gmc.mrooms3.net/course/view.php?id=82330" />
+						<QuickLink title={"Syllabus"} link="https://gmc.mrooms3.net/mod/book/view.php?id=7228575&chapterid=469135" />
 					</ClassSection>
 
 					<ClassSection title={"English"}>
 						<QuickLink title={"Moodle"} link="https://gmc.mrooms3.net/course/view.php?id=81173"/>
+						<QuickLink title={"Syllabus"} link="https://gmc.mrooms3.net/mod/book/view.php?id=7048062&chapterid=439233"/>
 					</ClassSection>
 				</div>
 			</div>
