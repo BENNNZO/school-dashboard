@@ -1,42 +1,58 @@
 "use client"
 
 import { useState } from "react"
+import YouTube from "react-youtube";
+import Image from "next/image";
+
+import ArrowIcon from '/public/assets/arrow.svg'
 
 export default function Utils() {
-    const [selectedStream, setSelectedStream] = useState("https://www.youtube.com/embed/jfKfPfyJRdk?si=W3hxSFDVBYkkMfQ-?autoplay=1");
+    const [selectedStream, setSelectedStream] = useState("jfKfPfyJRdk");
+    const [dropdown, setDropdown] = useState(false)
 
-    const playlist = [{
-        name: 'Ribbit',
-        writer: 'Juice WRLD',
-        src: '/music/Juice WRLD/Ribbit.mp3',
-        id: 1,
-    }]
+    const streams = [
+        { title: 'Chill', id: 'jfKfPfyJRdk' },
+        { title: 'Synth', id: '4xDzrJKXOOY' },
+        { title: 'Jazzy', id: '4oStw0r33so' }
+    ]
 
-    const streams = {
-        chill: 'https://www.youtube.com/embed/5qap5aO4i9A',
-        beats: 'https://www.youtube.com/embed/DWcJFNfaw9c',
-        jazz: 'https://www.youtube.com/embed/7NOSDKb0HlU',
+    function getKeyByValue(array, value) {
+        const foundObject = array.find(obj => obj.id === value);
+        return foundObject ? foundObject.title : null;
     }
 
     return (
         <section className="border-b border-white/20">
             <div>
-                <h3>Select a Stream</h3>
-                <select onChange={(e) => setSelectedStream(streams[e.target.value])}>
-                    <option value="chill">Lofi Hip Hop Radio - Chill</option>
-                    <option value="beats">Lofi Hip Hop Radio - Beats</option>
-                    <option value="jazz">Lofi Hip Hop Radio - Jazz</option>
-                    <option value="jazz2">Lofi Hip Hop Radio - Jazz2</option>
-                </select>
+                <div className="w-80 bg-white/10 cursor-pointer rounded-sm py-1 px-2 m-2 relative z-20" onClick={() => setDropdown(prev => !prev)}>
+                    <div className="flex flex-row justify-between items-center">
+                        <p className="text-white">♫ &gt; {getKeyByValue(streams, selectedStream).toUpperCase()}</p>
+                        <Image 
+                            src={ArrowIcon} 
+                            width={25}
+                            height={25}
+                            className={`invert ${dropdown ? 'rotate-90' : 'rotate-0'} duration-100`}
+                        />
+                    </div>
+                    {dropdown ? (
+                        <ul className="absolute text-white overflow-hidden border fade-in border-white/10 bg-stone-800/20 backdrop-blur-xl shadow-md rounded-sm top-full left-0 w-full flex flex-col mt-1">
+                            {streams.map((e, i) => {
+                                return (
+                                    <li className="px-4 py-2 hover:bg-stone-300/5 duration-50" onClick={() => setSelectedStream(e.id)}>{e.title}</li>
+                                )
+                            })}
+                        </ul>
+                    ) : (
+                        ""
+                    )}
+                </div>
+                {dropdown ? (
+                        <div className="bg-black/50 absolute top-0 left-0 w-full h-full z-10 fade-in backdrop-blur-sm" onClick={() => setDropdown(prev => !prev)}></div>
+                    ) : (
+                        ""
+                    )}
                 <div style={{ width: '0', height: '0', overflow: 'hidden' }}>
-                    <iframe
-                        width="560"
-                        height="315"
-                        src={`${selectedStream}?autoplay=1`}
-                        frameBorder="0"
-                        allow="autoplay"
-                        allowFullScreen
-                    />
+                    <YouTube videoId={selectedStream} opts={{ playerVars: { autoplay: 1 } }}/>
                 </div>
             </div>
         </section>
