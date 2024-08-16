@@ -41,7 +41,7 @@ export default function Utils() {
                         <ul className="absolute text-white overflow-hidden border fade-in border-white/10 bg-neutral-800/20 backdrop-blur-xl shadow-md rounded-sm top-full left-0 w-full flex flex-col mt-1">
                             {streams.map((e, i) => {
                                 return (
-                                    <li className="px-4 py-2 hover:bg-neutral-300/5 duration-50" onClick={() => setSelectedStream(e.id)}>{e.title}</li>
+                                    <li key={i} className="px-4 py-2 hover:bg-neutral-300/5 duration-50" onClick={() => setSelectedStream(e.id)}>{e.title}</li>
                                 )
                             })}
                         </ul>
