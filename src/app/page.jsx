@@ -1,9 +1,9 @@
 import QuickLink from "@/components/QuickLink";
 import ClassSection from "@/components/ClassSection";
 import Utils from "@/components/Utils";
+import Cursor from "@/components/Cursor";
 
 export default function Home() {
-
 	return (
 		<main className="bg-neutral-950 h-screen w-screen select-none">
 			<div className="max-w-[1500px] flex flex-col h-full border-x border-neutral-700/50 mx-auto fade-in">
@@ -28,6 +28,11 @@ export default function Home() {
 						<QuickLink title={"Syllabus"} link="https://gmc.mrooms3.net/mod/book/view.php?id=7048062&chapterid=439233"/>
 					</ClassSection>
 				</div>
+
+
+
+
+				{/* <Cursor /> */}
 			</div>
 		</main>
 	);
