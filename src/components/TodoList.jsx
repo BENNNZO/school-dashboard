@@ -24,7 +24,7 @@ export default function TodoList(props) {
     }, [list])
 
     function resetList() {
-        setList(["Civil Discourse Forum Post", "Forum Response 1", "Forum Response 2"])
+        setList(["Civil Discourse Forum Post", "Forum Response 1", "Forum Response 2", "-- Add Others"])
     }
 
     return (

@@ -41,8 +41,8 @@ export default function Utils() {
     return (
         <section className="border-b border-neutral-700/50 flex flex-row justify-between items-center p-2">
             <div>
-                <div className="w-80 bg-neutral-900/50 cursor-pointer rounded-sm py-2 px-4 relative z-20 border border-neutral-800/50 shadow-md" onClick={() => setDropdown(prev => !prev)}>
-                    <div className="flex flex-row justify-between items-center">
+                <div className="w-80 bg-neutral-900/50 cursor-pointer rounded-sm py-2 px-4 h-12 relative z-20 border grid place-items-center border-neutral-800/50 shadow-md" onClick={() => setDropdown(prev => !prev)}>
+                    <div className="flex flex-row justify-between items-center w-full">
                         <p className="text-white">♫ &gt; {getKeyByValue(streams, selectedStream).toUpperCase()}</p>
                         <Image
                             src={ArrowIcon}
@@ -73,38 +73,38 @@ export default function Utils() {
                 </div>
             </div>
             <ul className="flex flex-row gap-2">
-                <li className="bg-neutral-900/50 aspect-square cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm grid place-items-center border border-neutral-800/50 shadow-md">
+                <li className="bg-neutral-900/50 aspect-square cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm h-12 grid place-items-center border border-neutral-800/50 shadow-md">
                     <a href="https://undetectable.ai/" target="_blank">
                         <p className="text-white font-extrabold text-2xl m-2">ud</p>
                     </a>
                 </li>
-                <li className="bg-neutral-900/50 cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm grid place-items-center border border-neutral-800/50 shadow-md">
+                <li className="bg-neutral-900/50 cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm h-12 aspect-square grid place-items-center border border-neutral-800/50 shadow-md">
                     <a href="https://pairdrop.net/" target="_blank">
                         <Image
                             src={PairDropIcon}
                             width={30}
                             height={30}
-                            className="invert m-2"
+                            className="invert"
                         />
                     </a>
                 </li>
-                <li className="bg-neutral-900/50 cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm grid place-items-center border border-neutral-800/50 shadow-md">
+                <li className="bg-neutral-900/50 cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm h-12 aspect-square grid place-items-center border border-neutral-800/50 shadow-md">
                     <a href="https://selfservice.gmc.cc.ga.us/Student/?hideProxyDialog=false" target="_blank">
                         <Image
                             src={PortalIcon}
                             width={30}
                             height={30}
-                            className="invert m-2 p-1"
+                            className="invert p-1"
                         />
                     </a>
                 </li>
-                <li className="bg-neutral-900/50 relative cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm grid place-items-center border border-neutral-800/50 shadow-md group">
+                <li className="bg-neutral-900/50 relative cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm h-12 max-w-12 aspect-square grid place-items-center border border-neutral-800/50 shadow-md group">
                     <a href="https://outlook.office.com/owa/student.gmc.cc.ga.us" target="_blank">
                         <Image
                             src={MailIcon}
                             width={30}
                             height={30}
-                            className="invert m-2"
+                            className="invert"
                         />
                     </a>
                     {copied ? (
@@ -127,13 +127,13 @@ export default function Utils() {
                         />
                     )}
                 </li>
-                <li className="bg-neutral-900/50 cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm grid place-items-center border border-neutral-800/50 shadow-md">
+                <li className="bg-neutral-900/50 cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm h-12 aspect-square grid place-items-center border border-neutral-800/50 shadow-md">
                     <a href="https://chatgpt.com" target="_blank">
                         <Image
                             src={ChatGPTIcon}
                             width={30}
                             height={30}
-                            className="invert m-2"
+                            className="invert"
                         />
                     </a>
                 </li>
