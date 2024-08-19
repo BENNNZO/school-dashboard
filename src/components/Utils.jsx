@@ -10,6 +10,7 @@ import ChatGPTIcon from '/public/assets/chatgpt.svg'
 import PortalIcon from '/public/assets/portal.svg'
 import CopyIcon from '/public/assets/copy.svg'
 import CheckIcon from '/public/assets/check.svg'
+import PairDropIcon from '/public/assets/pairdrop.svg'
 
 export default function Utils() {
     const [selectedStream, setSelectedStream] = useState("jfKfPfyJRdk");
@@ -71,7 +72,22 @@ export default function Utils() {
                     <YouTube videoId={selectedStream} opts={{ playerVars: { autoplay: 1 } }} />
                 </div>
             </div>
-            <ul className="flex flex-row gap-4">
+            <ul className="flex flex-row gap-2">
+                <li className="bg-neutral-900/50 aspect-square cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm grid place-items-center border border-neutral-800/50 shadow-md">
+                    <a href="https://undetectable.ai/" target="_blank">
+                        <p className="text-white font-extrabold text-2xl m-2">ud</p>
+                    </a>
+                </li>
+                <li className="bg-neutral-900/50 cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm grid place-items-center border border-neutral-800/50 shadow-md">
+                    <a href="https://pairdrop.net/" target="_blank">
+                        <Image
+                            src={PairDropIcon}
+                            width={30}
+                            height={30}
+                            className="invert m-2"
+                        />
+                    </a>
+                </li>
                 <li className="bg-neutral-900/50 cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm grid place-items-center border border-neutral-800/50 shadow-md">
                     <a href="https://selfservice.gmc.cc.ga.us/Student/?hideProxyDialog=false" target="_blank">
                         <Image
@@ -91,27 +107,25 @@ export default function Utils() {
                             className="invert m-2"
                         />
                     </a>
-                    {/* <div className="opacity-0 group-hover:opacity-100 ease-out duration-100"> */}
-                        {copied ? (
-                            <Image
-                                src={CheckIcon}
-                                width={25}
-                                height={25}
-                                className="bg-white/0 p-1 backdrop-blur-sm border border-stone-800/50 rounded-sm absolute bottom-[75%] left-[80%] -translate-x-1/2 translate-y-1/3 z-10 opacity-0 group-hover:opacity-100 ease-out duration-100"
-                            />
-                        ) : (
-                            <Image
-                                src={CopyIcon}
-                                width={25}
-                                height={25}
-                                className="bg-white/0 p-1 backdrop-blur-sm border border-stone-800/50 rounded-sm absolute bottom-[75%] left-[80%] -translate-x-1/2 translate-y-1/3 z-10 opacity-0 group-hover:opacity-100 ease-out duration-100"
-                                onClick={() => {
-                                    navigator.clipboard.writeText("bphillips0826@bulldog.gmc.edu")
-                                    setCopied(true)
-                                }}
-                            />
-                        )}
-                    {/* </div> */}
+                    {copied ? (
+                        <Image
+                            src={CheckIcon}
+                            width={25}
+                            height={25}
+                            className="bg-white/0 p-1 backdrop-blur-sm border border-stone-800/50 rounded-sm absolute bottom-[75%] left-[80%] -translate-x-1/2 translate-y-1/3 z-10 opacity-0 group-hover:opacity-100 ease-out duration-100"
+                        />
+                    ) : (
+                        <Image
+                            src={CopyIcon}
+                            width={25}
+                            height={25}
+                            className="bg-white/0 p-1 backdrop-blur-sm border border-stone-800/50 rounded-sm absolute bottom-[75%] left-[80%] -translate-x-1/2 translate-y-1/3 z-10 opacity-0 group-hover:opacity-100 ease-out duration-100"
+                            onClick={() => {
+                                navigator.clipboard.writeText("bphillips0826@bulldog.gmc.edu")
+                                setCopied(true)
+                            }}
+                        />
+                    )}
                 </li>
                 <li className="bg-neutral-900/50 cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm grid place-items-center border border-neutral-800/50 shadow-md">
                     <a href="https://chatgpt.com" target="_blank">

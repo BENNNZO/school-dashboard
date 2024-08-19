@@ -26,7 +26,7 @@ export default function TodoList(props) {
     return (
         <section className="bg-neutral-900/50 rounded-sm mx-2 mb-2 text-white border border-neutral-800/50 shadow-md">
             <div className="flex flex-row justify-between p-2">
-                <h2 className="font-bold tracking-wide">Todo</h2>
+                <h2 className="font-bold tracking-wide" onDoubleClick={() => console.log("test")}>Todo</h2>
                 <Image
                     src={PlusIcon}
                     width={25}
