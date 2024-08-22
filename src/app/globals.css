@@ -27,3 +27,16 @@
         scale: 1;
     }
 }
+
+.slide-in-top {
+    animation: slide-in-top 300ms cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+@keyframes slide-in-top {
+    from {
+        transform: translateY(-15px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}

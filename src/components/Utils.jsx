@@ -24,7 +24,8 @@ export default function Utils() {
     const streams = [
         { title: 'Chill', id: 'jfKfPfyJRdk' },
         { title: 'Synth', id: '4xDzrJKXOOY' },
-        { title: 'Jazzy', id: '4oStw0r33so' }
+        { title: 'Piano', id: '4oStw0r33so' },
+        { title: 'EDM', id: 'oWW5TLrrbNo' }
     ]
 
     function getKeyByValue(array, value) {
@@ -90,21 +91,13 @@ export default function Utils() {
                 <IconButton href="https://undetectable.ai/" icon={UndetectableIcon} text={"AI Checker"} />
                 <IconButton href="https://undetectable.ai/" icon={MailIcon} text={"E-Mail"} />
                 <IconButton href="https://selfservice.gmc.cc.ga.us/Student/?hideProxyDialog=false" icon={PortalIcon} text={"Portal"} />
-                {/* <li className="bg-neutral-900/50 cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm h-12 aspect-square grid place-items-center border border-neutral-800/50 shadow-md group relative">
-                    <a href="https://outlook.office.com/owa/student.gmc.cc.ga.us" target="_blank">
-                        <Image src={MailIcon} width={30} height={30} className="invert" alt="E-Mail" />
-                    </a>
-                    {hoverText("E-Mail")}
-                    {copied ? (
-                        <Image src={CheckIcon} width={25} height={25} className="bg-white/0 p-1 backdrop-blur-sm border border-stone-800/50 rounded-sm absolute bottom-[75%] left-[80%] -translate-x-1/2 translate-y-1/3 z-10 opacity-0 group-hover:opacity-100 ease-out duration-100" />
-                    ) : (
-                        <Image src={CopyIcon} width={25} height={25} className="bg-white/0 p-1 backdrop-blur-sm border border-stone-800/50 rounded-sm absolute bottom-[75%] left-[80%] -translate-x-1/2 translate-y-1/3 z-10 opacity-0 group-hover:opacity-100 ease-out duration-100" onClick={() => {
-                            navigator.clipboard.writeText("bphillips0826@bulldog.gmc.edu");
-                            setCopied(true);
-                        }} />
-                    )}
-                </li> */}
             </ul>
+            {copied && (
+                <div className="fixed top-5 right-5 text-white bg-green-400 z-30 flex flex-row gap-2 px-2 py-1 rounded-sm slide-in-top pop-in fade-in">
+                    <Image src={CheckIcon} width={15} height={15} alt="check" className="grayscale brightness-0 invert scale-125" />
+                    <p>Copied</p>
+                </div>
+            )}
         </section>
     )
 }
