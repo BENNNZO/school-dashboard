@@ -44,23 +44,15 @@ export default function Utils() {
 
     const IconButton = ({ href, icon, text }) => (
         <li className="bg-neutral-900/50 cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm h-12 aspect-square grid place-items-center border border-neutral-800/50 shadow-md group relative">
-            <a href={href} target="_blank">
+            <a href={href} target="_blank" onContextMenu={e => {
+                if (text === "E-Mail") {
+                    e.preventDefault()
+                    navigator.clipboard.writeText("bphillips0826@bulldog.gmc.edu")
+                    setCopied(true)
+                }
+            }}>
                 <Image src={icon} width={30} height={30} className="invert" alt={text} />
             </a>
-            {text === "E-Mail" && (
-                copied ? (
-                    <Image alt={text} src={CheckIcon} width={25} height={25} className="bg-white/0 p-1 backdrop-blur-sm border border-stone-800/50 rounded-sm absolute bottom-[75%] left-[80%] -translate-x-1/2 translate-y-1/3 z-10 opacity-0 group-hover:opacity-100 ease-out duration-100" />
-                ) : (
-                    <Image alt={text} src={CopyIcon} width={25} height={25} className="bg-white/0 p-1 backdrop-blur-sm border border-stone-800/50 rounded-sm absolute bottom-[75%] left-[80%] -translate-x-1/2 translate-y-1/3 z-10 opacity-0 group-hover:opacity-100 ease-out duration-100" onClick={() => {
-                        navigator.clipboard.writeText("bphillips0826@bulldog.gmc.edu")
-                        setCopied(true)
-                    }} />
-                )
-            )}
-            {/* <div className="group-hover:inline-block hidden fade-in bg-neutral-900 text-white absolute bottom-full left-1/2 -translate-x-1/2 -translate-y-2 drop-shadow-lg rounded-sm whitespace-nowrap px-1 pop-in">
-                <div className="w-3 h-3 bg-neutral-900 absolute top-full left-1/2 -translate-x-1/2 -translate-y-2.5 rotate-45 rounded-sm -z-10"></div>
-                <p className="z-10">{hoverText}</p>
-            </div> */}
         </li>
     )
 
