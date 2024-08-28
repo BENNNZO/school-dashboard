@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import YouTube from "react-youtube"
 import Image from "next/image"
 
-import { ArrowIcon, MailIcon, ChatGPTIcon, PortalIcon, CopyIcon, CheckIcon, PairDropIcon, UndetectableIcon } from '/public/assets'
+import { ArrowIcon, MailIcon, ChatGPTIcon, PortalIcon, CopyIcon, CheckIcon, PairDropIcon, UndetectableIcon, GhostIcon } from '/public/assets'
 
 export default function Utils() {
     const [selectedStream, setSelectedStream] = useState("jfKfPfyJRdk")
@@ -78,10 +78,11 @@ export default function Utils() {
                 <YouTube videoId={selectedStream} opts={{ playerVars: { autoplay: 1 } }} className="overflow-hidden w-0 h-0" />
             </div>
             <ul className="flex flex-row gap-2">
-                <IconButton href="https://pairdrop.net/" icon={PairDropIcon} text={"PearDrop"} />
                 <IconButton href="https://chatgpt.com" icon={ChatGPTIcon} text={"AI"} />
                 <IconButton href="https://undetectable.ai/" icon={UndetectableIcon} text={"AI Checker"} />
-                <IconButton href="https://undetectable.ai/" icon={MailIcon} text={"E-Mail"} />
+                <IconButton href="https://www.the-ghost-ai.com/" icon={GhostIcon} text={"Ghost AI"} />
+                <IconButton href="https://pairdrop.net/" icon={PairDropIcon} text={"PearDrop"} />
+                <IconButton href="https://outlook.office.com/owa/student.gmc.cc.ga.us" icon={MailIcon} text={"E-Mail"} />
                 <IconButton href="https://selfservice.gmc.cc.ga.us/Student/?hideProxyDialog=false" icon={PortalIcon} text={"Portal"} />
             </ul>
             {copied && (
