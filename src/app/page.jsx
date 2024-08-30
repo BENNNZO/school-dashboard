@@ -22,12 +22,12 @@ export default function Home() {
 						<QuickLink title={"MyLab"} link="https://mylabmastering.pearson.com/?courseId=12966713#/" />
 					</ClassSection>
 					
-					<ClassSection title={"Leadership"}>
+					<ClassSection title={"Leadership"} checklist={["150 word count on forum posts", "100 word count on forum post responses"]}>
 						<QuickLink title={"Moodle"} link="https://gmc.mrooms3.net/course/view.php?id=82330" />
 						<QuickLink title={"Syllabus"} link="https://gmc.mrooms3.net/mod/book/view.php?id=7228575&chapterid=469135" />
 					</ClassSection>
 
-					<ClassSection title={"English"}>
+					<ClassSection title={"English"} checklist={["make sure to cite under all forum posts"]}>
 						<QuickLink title={"Moodle"} link="https://gmc.mrooms3.net/course/view.php?id=81173"/>
 						<QuickLink title={"Syllabus"} link="https://gmc.mrooms3.net/mod/book/view.php?id=7048062&chapterid=439233"/>
 					</ClassSection>
