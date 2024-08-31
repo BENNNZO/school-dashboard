@@ -12,12 +12,12 @@ export default function ClassSection(props) {
             <div>
                 <div className="relative">
                     {
-                        checklistToggle && checklist && <div className="fixed blur-in top-0 left-0 w-full h-full bg-black/10 backdrop-blur duration-200 z-20" onClick={() => setChecklistToggle(prev => !prev)}></div>
+                        checklist && <div className={`fixed top-0 left-0 w-full h-full bg-black/10 duration-200 z-20 ${checklistToggle ? 'pointer-events-auto blur-in' : 'pointer-events-none blur-out'}`} onClick={() => setChecklistToggle(prev => !prev)}></div>
                     }
                     <h2 className={`text-center text-white font-semibold text-2xl py-3 ${checklist && checklistToggle && "relative z-20"} z-0`} onClick={() => setChecklistToggle(prev => !prev)}>{title}</h2>
                     {
-                        checklist && checklistToggle &&
-                        <ul className="opacity-100 pop-in fade-in scale-100 duration-200 pointer-events-none backdrop-blur-lg text-white absolute top-full left-1/2 -translate-x-1/2 z-20 rounded-sm backdrop-brightness-50 border border-neutral-800/50">
+                        checklist &&
+                        <ul className={`pointer-events-none backdrop-blur-lg text-white absolute top-full left-1/2 -translate-x-1/2 z-20 rounded-sm backdrop-brightness-50 border border-neutral-800/50 ${checklistToggle ? 'fade-in pop-in' : 'fade-out pop-out'}`}>
                             {checklist.map((item, index) => (
                                 <li key={index} className="px-4 py-2">
                                     {item}

@@ -43,8 +43,8 @@ export default function Utils() {
     }
 
     const IconButton = ({ href, icon, text }) => (
-        <li className="bg-neutral-900/50 cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm h-12 aspect-square grid place-items-center border border-neutral-800/50 shadow-md group relative">
-            <a href={href} target="_blank" onContextMenu={e => {
+        <li className="bg-neutral-900/50 cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm h-12 aspect-square border border-neutral-800/50 shadow-md group relative">
+            <a href={href} target="_blank" className="w-full h-full grid place-items-center" onContextMenu={e => {
                 if (text === "E-Mail") {
                     e.preventDefault()
                     navigator.clipboard.writeText("bphillips0826@bulldog.gmc.edu")
