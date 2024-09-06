@@ -9,6 +9,7 @@ import { ArrowIcon, MailIcon, ChatGPTIcon, PortalIcon, CopyIcon, CheckIcon, Pair
 export default function Utils() {
     const [selectedStream, setSelectedStream] = useState("jfKfPfyJRdk")
     const [copied, setCopied] = useState(false)
+    const [copied2, setCopied2] = useState(false)
     const [dropdown, setDropdown] = useState(false)
 
     useEffect(() => {
@@ -48,6 +49,10 @@ export default function Utils() {
                 if (text === "E-Mail") {
                     e.preventDefault()
                     navigator.clipboard.writeText("bphillips0826@bulldog.gmc.edu")
+                    setCopied(true)
+                } else if (text === "AI") {
+                    e.preventDefault()
+                    navigator.clipboard.writeText("*respond to this civil discussion forum post in a humane and human like way. do not repeat it just add to the discussion. do not belittle or try to sound smart just discuss.*")
                     setCopied(true)
                 }
             }}>
