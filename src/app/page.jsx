@@ -9,14 +9,14 @@ export default function Home() {
 				<h1 className="text-white text-center font-bold text-5xl py-5 tracking-wide border-b border-neutral-700/50">GMC Dashboard</h1>
 				<Utils />
 				<div className="flex flex-row h-full justify-around gap-px bg-neutral-700/50">
-					<ClassSection title={"American History"}>
-						<QuickLink title={"Moodle"} link="https://gmc.mrooms3.net/course/view.php?id=83635" />
-						<QuickLink title={"Syllabus"} link="https://gmc.mrooms3.net/mod/book/view.php?id=7324549&chapterid=477531" />
-					</ClassSection>
-					
 					<ClassSection title={"Algebra"}>
 						<QuickLink title={"Moodle"} link="https://gmc.mrooms3.net/course/view.php?id=83664" />
 						<QuickLink title={"Syllabus"} link="https://gmc.mrooms3.net/mod/book/view.php?id=7328786&chapterid=478041" />
+					</ClassSection>
+					
+					<ClassSection title={"American History"}>
+						<QuickLink title={"Moodle"} link="https://gmc.mrooms3.net/course/view.php?id=83635" />
+						<QuickLink title={"Syllabus"} link="https://gmc.mrooms3.net/mod/book/view.php?id=7324549&chapterid=477531" />
 					</ClassSection>
 
 					<ClassSection title={"English II"}>
