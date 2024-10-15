@@ -1,18 +1,13 @@
 import QuickLink from "@/components/QuickLink";
 import ClassSection from "@/components/ClassSection";
 import Utils from "@/components/Utils";
-// import Cursor from "@/components/Cursor";
-// import AiDetection from "@/components/AiDetection";
-// import Pages from "@/components/Pages";
 
 export default function Home() {
 	return (
 		<main className="bg-neutral-950 h-screen w-screen select-none">
 			<div className="max-w-[1500px] flex flex-col h-full border-x border-neutral-700/50 mx-auto fade-in">
 				<h1 className="text-white text-center font-bold text-5xl py-5 tracking-wide border-b border-neutral-700/50">GMC Dashboard</h1>
-				
 				<Utils />
-				
 				<div className="flex flex-row h-full justify-around gap-px bg-neutral-700/50">
 					<ClassSection title={"American History"}>
 						<QuickLink title={"Moodle"} link="https://gmc.mrooms3.net/course/view.php?id=83635" />

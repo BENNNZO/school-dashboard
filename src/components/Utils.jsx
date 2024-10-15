@@ -9,7 +9,6 @@ import { ArrowIcon, MailIcon, ChatGPTIcon, PortalIcon, CopyIcon, CheckIcon, Pair
 export default function Utils() {
     const [selectedStream, setSelectedStream] = useState("jfKfPfyJRdk")
     const [copied, setCopied] = useState(false)
-    const [copied2, setCopied2] = useState(false)
     const [dropdown, setDropdown] = useState(false)
 
     useEffect(() => {
