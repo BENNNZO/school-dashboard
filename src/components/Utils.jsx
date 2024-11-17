@@ -49,7 +49,7 @@ export default function Utils() {
         )
     }
 
-    const IconButton = ({ href, icon, text }) => (
+    const IconButton = ({ href, icon, name }) => (
         <li className="bg-neutral-900/50 cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm h-12 aspect-square border border-neutral-800/50 shadow-md group relative">
             <a href={href} target="_blank" className="w-full h-full grid place-items-center" onContextMenu={e => {
                 e.preventDefault()
