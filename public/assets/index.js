@@ -7,3 +7,4 @@ export { default as CheckIcon } from './check.svg';
 export { default as PairDropIcon } from './pairdrop.svg';
 export { default as UndetectableIcon } from './undetectableai.svg';
 export { default as GhostIcon } from './ghost.svg';
+export { default as HumanizeAIIcon } from './humanizeai.svg';

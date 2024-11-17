@@ -4,14 +4,14 @@ import { useState, useEffect } from "react"
 import YouTube from "react-youtube"
 import Image from "next/image"
 
-import { ArrowIcon, MailIcon, ChatGPTIcon, PortalIcon, CopyIcon, CheckIcon, PairDropIcon, UndetectableIcon, GhostIcon } from '/public/assets'
+import { ArrowIcon, MailIcon, ChatGPTIcon, PortalIcon, CopyIcon, CheckIcon, PairDropIcon, UndetectableIcon, GhostIcon, HumanizeAIIcon } from '/public/assets'
 import { SSG_FALLBACK_EXPORT_ERROR } from "next/dist/lib/constants"
 
 export default function Utils() {
     const [selectedStream, setSelectedStream] = useState("jfKfPfyJRdk")
     const [copied, setCopied] = useState(false)
     const [dropdown, setDropdown] = useState(false)
-    const [promptsModal, setPromptsModal] = useState(true)
+    const [promptsModal, setPromptsModal] = useState(false)
 
     const prompts = [
         {
@@ -54,15 +54,14 @@ export default function Utils() {
             <a href={href} target="_blank" className="w-full h-full grid place-items-center" onContextMenu={e => {
                 e.preventDefault()
                 
-                if (text === "E-Mail") {
+                if (name === "E-Mail") {
                     setCopied(true)
                     navigator.clipboard.writeText("bphillips0826@bulldog.gmc.edu")
-                } else if (text === "AI") {
+                } else if (name === "AI") {
                     setPromptsModal(true)
-                    // navigator.clipboard.writeText("*respond to this civil discussion forum post in a humane and human like way. do not repeat it just add to the discussion. do not belittle or try to sound smart just discuss.*")
                 }
             }}>
-                <Image src={icon} width={30} height={30} className="invert" alt={text} />
+                <Image src={icon} width={30} height={30} className="invert" alt={name} />
             </a>
         </li>
     )
@@ -93,12 +92,14 @@ export default function Utils() {
 
             {/* QUICK LINKS */}
             <ul className="flex flex-row gap-2">
-                <IconButton href="https://chatgpt.com" icon={ChatGPTIcon} text={"AI"} />
-                <IconButton href="https://undetectable.ai/" icon={UndetectableIcon} text={"AI Checker"} />
-                <IconButton href="https://www.the-ghost-ai.com/" icon={GhostIcon} text={"Ghost AI"} />
-                <IconButton href="https://pairdrop.net/" icon={PairDropIcon} text={"PearDrop"} />
-                <IconButton href="https://outlook.office.com/owa/student.gmc.cc.ga.us" icon={MailIcon} text={"E-Mail"} />
-                <IconButton href="https://selfservice.gmc.cc.ga.us/Student/?hideProxyDialog=false" icon={PortalIcon} text={"Portal"} />
+                <IconButton href="https://chatgpt.com" icon={ChatGPTIcon} name={"AI"} />
+                {/* <IconButton href="https://www.humanizeai.pro/" icon={HumanizeAIIcon} name={"HumanizeAI"} /> */}
+                {/* <IconButton href="https://phrasly.ai/ai-humanizer" icon={ChatGPTIcon} name={"Phrasly"} /> */}
+                {/* <IconButton href="https://undetectable.ai/" icon={UndetectableIcon} name={"AI Checker"} /> */}
+                {/* <IconButton href="https://www.the-ghost-ai.com/" icon={GhostIcon} name={"Ghost AI"} /> */}
+                <IconButton href="https://pairdrop.net/" icon={PairDropIcon} name={"PearDrop"} />
+                <IconButton href="https://outlook.office.com/owa/student.gmc.cc.ga.us" icon={MailIcon} name={"E-Mail"} />
+                <IconButton href="https://selfservice.gmc.cc.ga.us/Student/?hideProxyDialog=false" icon={PortalIcon} name={"Portal"} />
             </ul>
 
             {/* UTIL UTILITES */}
