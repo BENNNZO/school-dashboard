@@ -149,18 +149,21 @@ export default function TodoList(props) {
                     </li>
                 ))}
             </ul>
-            {colorMenu && 
-                <div 
-                    onContextMenu={e => e.preventDefault()} 
-                    onMouseUp={e => handleMouseUp(e)} 
-                    className="absolute w-16 aspect-square -translate-x-1/2 -translate-y-1/2 pop-fade-in" 
-                    style={{ top: colorMenuPos.y, left: colorMenuPos.x }}
-                >
-                    <div className="w-1/2 h-1/2 absolute  top-0 left-0     bg-red-400/75 hover:bg-red-400/100 rounded-tl-[50%] duration-150 backdrop-blur-sm" color="red"></div>
-                    <div className="w-1/2 h-1/2 absolute  top-1/2 left-0   bg-blue-400/75 hover:bg-blue-400/100 rounded-bl-[50%] duration-150 backdrop-blur-sm" color="blue"></div>
-                    <div className="w-1/2 h-1/2 absolute  top-1/2 left-1/2 bg-green-400/75 hover:bg-green-400/100 rounded-br-[50%] duration-150 backdrop-blur-sm" color="green"></div>
-                    <div className="w-1/2 h-1/2 absolute  top-0 left-1/2   bg-yellow-400/75 hover:bg-yellow-400/100 rounded-tr-[50%] duration-150 backdrop-blur-sm" color="yellow"></div>
-                    {/* <div className="w-[90%] h-[90%] translate-x-[5%] translate-y-[5%] bg-neutral-700 rounded-full pointer-events-none"></div> */}
+            {colorMenu &&
+                // its kinda jankey but this outer div centers it even though 7 isnt half of 16?
+                <div className="absolute -top-4 -left-4">
+                    <div 
+                        onContextMenu={e => e.preventDefault()} 
+                        onMouseUp={e => handleMouseUp(e)} 
+                        className="absolute w-16 aspect-square pop-fade-in" 
+                        style={{ top: colorMenuPos.y, left: colorMenuPos.x }}
+                    >
+                        <div className="w-[40%] h-[40%] hover:w-1/2 hover:h-1/2 -translate-x-1/2 -translate-y-1/2 absolute duration-150 backdrop-blur-sm top-0 left-0     bg-red-400/75 hover:bg-red-400/100 rounded-tl-[80%]" color="red"></div>
+                        <div className="w-[40%] h-[40%] hover:w-1/2 hover:h-1/2 -translate-x-1/2 -translate-y-1/2 absolute duration-150 backdrop-blur-sm top-1/2 left-0   bg-blue-400/75 hover:bg-blue-400/100 rounded-bl-[80%]" color="blue"></div>
+                        <div className="w-[40%] h-[40%] hover:w-1/2 hover:h-1/2 -translate-x-1/2 -translate-y-1/2 absolute duration-150 backdrop-blur-sm top-1/2 left-1/2 bg-green-400/75 hover:bg-green-400/100 rounded-br-[80%]" color="green"></div>
+                        <div className="w-[40%] h-[40%] hover:w-1/2 hover:h-1/2 -translate-x-1/2 -translate-y-1/2 absolute duration-150 backdrop-blur-sm top-0 left-1/2   bg-yellow-400/75 hover:bg-yellow-400/100 rounded-tr-[80%]" color="yellow"></div>
+                        {/* <div className="w-[90%] h-[90%] translate-x-[5%] translate-y-[5%] bg-neutral-700 rounded-full pointer-events-none"></div> */}
+                    </div>
                 </div>
             }
         </section>
