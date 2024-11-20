@@ -12,6 +12,7 @@ export default function TodoList(props) {
     const [list, setList] = useState([])
     const [colorMenu, setColorMenu] = useState(false)
     const [colorMenuPos, setColorMenuPos] = useState({ x: 0, y: 0})
+    const [target, setTarget] = useState(null)
 
     const menuRef = useRef(null);
 
@@ -28,20 +29,47 @@ export default function TodoList(props) {
     }, [list])
 
     function resetList() {
-        setList(["Civil Discourse Forum Post", "Forum Response 1", "Forum Response 2", "-- Add Others"])
+        setList([{ text: "Civil Discourse Forum Post", color: null }, { text: "Forum Response 2", color: null }, { text: "Forum Response 2", color: null }, { text: "-- Add Others", color: null  }])
     }
 
     function handleMouseDown(e) {
-        
+        e.preventDefault()
+
+        // Test if the click is a right click
+        if (e.button == 2) {
+            console.log("Right Down")
+
+            setTarget(e.target)
+            setColorMenu(true)
+            setColorMenuPos({ x: e.clientX, y: e.clientY })
+        }
     }
 
-
     function handleMouseUp(e) {
-        
+        e.preventDefault()
+
+        // console.log(e.target.getAttribute("color"))
+        // Test if the click is a right click
+        if (e.button == 2) {
+            console.log("Right Up")
+
+            setList(prevList => {
+                let newList = [...prevList]
+
+                // console.log(target.getAttribute("index"))
+                newList[target.getAttribute("index")].color = e.target.getAttribute("color")
+                return newList
+            })
+
+            setColorMenu(false)
+        }
     }
 
     return (
-        <section className="bg-neutral-900/50 rounded-sm mx-2 mb-2 text-white border border-neutral-800/50 shadow-md">
+        <section className="bg-neutral-900/50 rounded-sm mx-2 mb-2 text-white border border-neutral-800/50 shadow-md" onContextMenu={e => e.preventDefault()}>
+            {/* <div className="bg-red-400 text-yellow-400 absolute top-0 left-0 px-4 py-2">
+                {JSON.stringify(colorMenuPos)}
+            </div> */}
             <div className="flex flex-row justify-between p-2">
                 <h2 className="font-bold tracking-wide" onDoubleClick={() => console.log(resetList())}>Todo</h2>
                 <Image
@@ -53,19 +81,18 @@ export default function TodoList(props) {
                     onClick={() => {
                         let text = prompt("TODO")
 
-                        setList(prev => [...prev, text])
+                        setList(prev => [...prev, { text, color: null }])
                     }}
                 />
             </div>
             <ul>
+                {/* <pre>{JSON.stringify(list, null, 4)}</pre> */}
                 {list.map((e, i) => (
-                    <div 
-                        key={i} 
+                    <li
+                        key={i}
+                        index={i}
                         className="border-t border-neutral-800/50 py-1.5 flex flex-row justify-between group px-2"
-                        onContextMenu={(e) => {
-                            e.preventDefault()
-                            console.log("Context Menu")
-                        }}
+                        onContextMenu={e => e.preventDefault()}
                         onMouseDown={e => handleMouseDown(e)}
                         onMouseUp={e => handleMouseUp(e)}
 
@@ -86,22 +113,56 @@ export default function TodoList(props) {
                         //     }
                         // }}
                     >
-                        <p>{e}</p>
-                        <Image
-                            src={TrashIcon}
-                            width={25}
-                            height={25}
-                            alt="delete todo button"
-                            className="opacity-0 group-hover:opacity-100 duration-100 hover:bg-red-400/20 w-6 p-1 rounded-sm cursor-pointer"
-                            onClick={() => setList(prev => {
-                                let newArr = [...prev]
-                                newArr.splice(i, 1)
-                                return newArr
-                            })}
-                        />
-                    </div>
+                        <p className="pointer-events-none">{e.text}</p>
+                        <div className="flex flex-row gap-3 items-center">
+                            <Image
+                                src={TrashIcon}
+                                width={25}
+                                height={25}
+                                alt="delete todo button"
+                                className="opacity-0 group-hover:opacity-100 duration-100 hover:bg-red-400/20 w-6 p-1 rounded-sm cursor-pointer"
+                                onClick={() => setList(prev => {
+                                    let newArr = [...prev]
+                                    newArr.splice(i, 1)
+                                    return newArr
+                                })}
+                            />
+                            <div
+                                className={`w-4 h-4 rounded-full opacity-75 group-hover:opacity-100 duration-150 ${
+                                    (() => {
+                                        switch (e.color) {
+                                            case "red":
+                                                return 'bg-red-500';
+                                            case "blue":
+                                                return 'bg-blue-500';
+                                            case "green":
+                                                return 'bg-green-500';
+                                            case "yellow":
+                                                return 'bg-yellow-500';
+                                            default:
+                                                return 'bg-neutral-800';
+                                        }
+                                    })()
+                                }`}
+                            ></div>
+                        </div>
+                    </li>
                 ))}
             </ul>
+            {colorMenu && 
+                <div 
+                    onContextMenu={e => e.preventDefault()} 
+                    onMouseUp={e => handleMouseUp(e)} 
+                    className="absolute w-16 aspect-square -translate-x-1/2 -translate-y-1/2 pop-fade-in" 
+                    style={{ top: colorMenuPos.y, left: colorMenuPos.x }}
+                >
+                    <div className="w-1/2 h-1/2 absolute  top-0 left-0     bg-red-400/75 hover:bg-red-400/100 rounded-tl-[50%] duration-150 backdrop-blur-sm" color="red"></div>
+                    <div className="w-1/2 h-1/2 absolute  top-1/2 left-0   bg-blue-400/75 hover:bg-blue-400/100 rounded-bl-[50%] duration-150 backdrop-blur-sm" color="blue"></div>
+                    <div className="w-1/2 h-1/2 absolute  top-1/2 left-1/2 bg-green-400/75 hover:bg-green-400/100 rounded-br-[50%] duration-150 backdrop-blur-sm" color="green"></div>
+                    <div className="w-1/2 h-1/2 absolute  top-0 left-1/2   bg-yellow-400/75 hover:bg-yellow-400/100 rounded-tr-[50%] duration-150 backdrop-blur-sm" color="yellow"></div>
+                    {/* <div className="w-[90%] h-[90%] translate-x-[5%] translate-y-[5%] bg-neutral-700 rounded-full pointer-events-none"></div> */}
+                </div>
+            }
         </section>
     )
 }
