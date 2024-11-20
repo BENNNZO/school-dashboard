@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 
 import TrashIcon from '/public/assets/trash.svg'
@@ -10,6 +10,10 @@ export default function TodoList(props) {
     const { localKey } = props
 
     const [list, setList] = useState([])
+    const [colorMenu, setColorMenu] = useState(false)
+    const [colorMenuPos, setColorMenuPos] = useState({ x: 0, y: 0})
+
+    const menuRef = useRef(null);
 
     useEffect(() => {
         const storedArray = localStorage.getItem(localKey)
@@ -25,6 +29,15 @@ export default function TodoList(props) {
 
     function resetList() {
         setList(["Civil Discourse Forum Post", "Forum Response 1", "Forum Response 2", "-- Add Others"])
+    }
+
+    function handleMouseDown(e) {
+        
+    }
+
+
+    function handleMouseUp(e) {
+        
     }
 
     return (
@@ -46,7 +59,33 @@ export default function TodoList(props) {
             </div>
             <ul>
                 {list.map((e, i) => (
-                    <div key={i} className="border-t border-neutral-800/50 py-1.5 flex flex-row justify-between group px-2">
+                    <div 
+                        key={i} 
+                        className="border-t border-neutral-800/50 py-1.5 flex flex-row justify-between group px-2"
+                        onContextMenu={(e) => {
+                            e.preventDefault()
+                            console.log("Context Menu")
+                        }}
+                        onMouseDown={e => handleMouseDown(e)}
+                        onMouseUp={e => handleMouseUp(e)}
+
+                        // onMouseUp={(e) => {
+                        //     e.preventDefault()
+                        //     if (e.button == 2) {
+                        //         console.log("Right Cick UP")
+                        //     } else {
+                        //         console.log("Other UP")
+                        //     }
+                        // }}
+                        // onMouseDown={(e) => {
+                        //     e.preventDefault()
+                        //     if (e.button == 2) {
+                        //         console.log("Right Cick DOWN")
+                        //     } else {
+                        //         console.log("Other DOWN")
+                        //     }
+                        // }}
+                    >
                         <p>{e}</p>
                         <Image
                             src={TrashIcon}
