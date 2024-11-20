@@ -8,7 +8,7 @@ export default function ClassSection(props) {
     const { title, checklist } = props
     
     return (
-        <section className="bg-neutral-950 w-full flex flex-col justify-between">
+        <section className="bg-neutral-950 w-full flex flex-col justify-between" onContextMenu={e => e.preventDefault()}>
             <div>
                 <div className="relative">
                     {

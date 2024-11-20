@@ -12,6 +12,13 @@ export default function TodoList(props) {
     const [list, setList] = useState([])
     const [colorMenu, setColorMenu] = useState(false)
     const [colorMenuPos, setColorMenuPos] = useState({ x: 0, y: 0})
+    const [colors, setColors] = useState([
+        { color: "#dc2626" },
+        { color: "#ea580c" },
+        { color: "#ca8a04" },
+        { color: "#16a34a" },
+        { color: "#0284c7" }
+    ])
     const [target, setTarget] = useState(null)
 
     const menuRef = useRef(null);
@@ -114,13 +121,13 @@ export default function TodoList(props) {
                         // }}
                     >
                         <p className="pointer-events-none">{e.text}</p>
-                        <div className="flex flex-row gap-3 items-center">
+                        <div className="flex flex-row gap-3 items-center pointer-events-none">
                             <Image
                                 src={TrashIcon}
                                 width={25}
                                 height={25}
                                 alt="delete todo button"
-                                className="opacity-0 group-hover:opacity-100 duration-100 hover:bg-red-400/20 w-6 p-1 rounded-sm cursor-pointer"
+                                className="opacity-0 group-hover:opacity-100 duration-100 hover:bg-red-400/20 w-6 p-1 rounded-sm cursor-pointer pointer-events-auto"
                                 onClick={() => setList(prev => {
                                     let newArr = [...prev]
                                     newArr.splice(i, 1)
@@ -128,22 +135,8 @@ export default function TodoList(props) {
                                 })}
                             />
                             <div
-                                className={`w-4 h-4 rounded-full opacity-75 group-hover:opacity-100 duration-150 ${
-                                    (() => {
-                                        switch (e.color) {
-                                            case "red":
-                                                return 'bg-red-500';
-                                            case "blue":
-                                                return 'bg-blue-500';
-                                            case "green":
-                                                return 'bg-green-500';
-                                            case "yellow":
-                                                return 'bg-yellow-500';
-                                            default:
-                                                return 'bg-neutral-800';
-                                        }
-                                    })()
-                                }`}
+                                className={`w-4 h-4 rounded-full opacity-75 group-hover:opacity-100 duration-150 pointer-events-none`}
+                                style={{ backgroundColor: e.color == null ? "#262626" : e.color }}
                             ></div>
                         </div>
                     </li>
@@ -151,20 +144,37 @@ export default function TodoList(props) {
             </ul>
             {colorMenu &&
                 // its kinda jankey but this outer div centers it even though 7 isnt half of 16?
-                <div className="absolute -top-4 -left-4">
                     <div 
                         onContextMenu={e => e.preventDefault()} 
                         onMouseUp={e => handleMouseUp(e)} 
-                        className="absolute w-16 aspect-square pop-fade-in" 
+                        className="absolute bg-red-400 pop-fade-in" 
                         style={{ top: colorMenuPos.y, left: colorMenuPos.x }}
                     >
-                        <div className="w-[40%] h-[40%] hover:w-1/2 hover:h-1/2 -translate-x-1/2 -translate-y-1/2 absolute duration-150 backdrop-blur-sm top-0 left-0     bg-red-400/75 hover:bg-red-400/100 rounded-tl-[80%]" color="red"></div>
+                        {colors.map((e, i) => {
+                            let width = 150
+                            let moveUp = 20
+                            let colorWidth = ( width / colors.length ) * ( i + 0.5 ) - ( width / 2 )
+
+                            return (
+                                <div 
+                                    color={e.color}
+                                    className="bg-neutral-700 cursor-pointer w-6 aspect-square absolute rounded-full opacity-0 hover:scale-[115%] duration-100 ease-out group -translate-x-1/2 -translate-y-1/2 grid place-items-center shadow-md fade-in"
+                                    style={{
+                                        top: `-${moveUp}px`,
+                                        left: `${colorWidth}px`,
+                                        animationDelay: `${i / 50}s`
+                                    }}
+                                >
+                                    <div className={`pointer-events-none w-4 aspect-square rounded-full group-hover:scale-110 duration-150 ease-out`} style={{ backgroundColor: `${e.color}` }}></div>
+                                </div>
+                            )
+                        })}
+                        {/* <div className="w-[40%] h-[40%] hover:w-1/2 hover:h-1/2 -translate-x-1/2 -translate-y-1/2 absolute duration-150 backdrop-blur-sm top-0 left-0     bg-red-400/75 hover:bg-red-400/100 rounded-tl-[80%]" color="red"></div>
                         <div className="w-[40%] h-[40%] hover:w-1/2 hover:h-1/2 -translate-x-1/2 -translate-y-1/2 absolute duration-150 backdrop-blur-sm top-1/2 left-0   bg-blue-400/75 hover:bg-blue-400/100 rounded-bl-[80%]" color="blue"></div>
                         <div className="w-[40%] h-[40%] hover:w-1/2 hover:h-1/2 -translate-x-1/2 -translate-y-1/2 absolute duration-150 backdrop-blur-sm top-1/2 left-1/2 bg-green-400/75 hover:bg-green-400/100 rounded-br-[80%]" color="green"></div>
-                        <div className="w-[40%] h-[40%] hover:w-1/2 hover:h-1/2 -translate-x-1/2 -translate-y-1/2 absolute duration-150 backdrop-blur-sm top-0 left-1/2   bg-yellow-400/75 hover:bg-yellow-400/100 rounded-tr-[80%]" color="yellow"></div>
+                        <div className="w-[40%] h-[40%] hover:w-1/2 hover:h-1/2 -translate-x-1/2 -translate-y-1/2 absolute duration-150 backdrop-blur-sm top-0 left-1/2   bg-yellow-400/75 hover:bg-yellow-400/100 rounded-tr-[80%]" color="yellow"></div> */}
                         {/* <div className="w-[90%] h-[90%] translate-x-[5%] translate-y-[5%] bg-neutral-700 rounded-full pointer-events-none"></div> */}
                     </div>
-                </div>
             }
         </section>
     )
