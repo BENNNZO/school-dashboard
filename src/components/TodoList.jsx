@@ -112,7 +112,7 @@ export default function TodoList(props) {
                                 })}
                             />
                             <div
-                                className={`w-4 h-4 rounded-full opacity-75 group-hover:opacity-100 duration-150 pointer-events-none`}
+                                className={`w-4 h-4 rounded-full opacity-75 group-hover:opacity-100 duration-150 pointer-events-none shadow-md`}
                                 style={{ backgroundColor: e.color == null ? "#262626" : e.color }}
                             ></div>
                         </div>
@@ -133,6 +133,7 @@ export default function TodoList(props) {
 
                         return (
                             <div 
+                                key={i}
                                 color={e.color}
                                 className="bg-neutral-700 cursor-pointer w-6 aspect-square absolute rounded-full opacity-0 hover:scale-[115%] duration-100 ease-out group -translate-x-1/2 -translate-y-1/2 grid place-items-center shadow-md fade-in"
                                 style={{
@@ -141,7 +142,7 @@ export default function TodoList(props) {
                                     animationDelay: `${i / 50}s`
                                 }}
                             >
-                                <div className={`pointer-events-none w-4 aspect-square rounded-full group-hover:scale-110 duration-150 ease-out`} style={{ backgroundColor: `${e.color}` }}></div>
+                                <div className={`pointer-events-none shadow-sm w-4 aspect-square rounded-full group-hover:scale-110 duration-150 ease-out`} style={{ backgroundColor: `${e.color}` }}></div>
                             </div>
                         )
                     })}
