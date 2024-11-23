@@ -71,7 +71,7 @@ export default function TodoList(props) {
     }
 
     return (
-        <section className="bg-neutral-900/50 rounded-sm mx-2 mb-2 text-white border border-neutral-800/50 shadow-md" onContextMenu={e => e.preventDefault()}>
+        <section className="bg-neutral-900/50 rounded-sm mx-2 mb-2 text-white shadow-md" onContextMenu={e => e.preventDefault()}>
             <div className="flex flex-row justify-between p-2">
                 <h2 className="font-bold tracking-wide" onDoubleClick={() => console.log(resetList())}>Todo</h2>
                 <Image
@@ -92,13 +92,13 @@ export default function TodoList(props) {
                     <li
                         key={i}
                         index={i}
-                        className="border-t border-neutral-800/50 py-1.5 flex flex-row justify-between group px-2"
+                        className="border-t border-neutral-800/30 py-1.5 flex flex-row justify-between group px-2"
                         onContextMenu={e => e.preventDefault()}
                         onMouseDown={e => handleMouseDown(e)}
                         onMouseUp={e => handleMouseUp(e)}
                     >
                         <p className="pointer-events-none">{e.text}</p>
-                        <div className="flex flex-row gap-3 items-center pointer-events-none">
+                        <div className="flex flex-row gap-3 items-center pointer-events-none mr-2">
                             <Image
                                 src={TrashIcon}
                                 width={25}
@@ -112,7 +112,7 @@ export default function TodoList(props) {
                                 })}
                             />
                             <div
-                                className={`w-4 h-4 rounded-full opacity-75 group-hover:opacity-100 duration-150 pointer-events-none shadow-md`}
+                                className={`w-2.5 aspect-square rounded-full opacity-75 group-hover:opacity-100 duration-150 pointer-events-none shadow-md`}
                                 style={{ backgroundColor: e.color == null ? "#262626" : e.color }}
                             ></div>
                         </div>

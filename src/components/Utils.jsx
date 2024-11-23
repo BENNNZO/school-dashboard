@@ -50,7 +50,7 @@ export default function Utils() {
     }
 
     const IconButton = ({ href, icon, name }) => (
-        <li className="bg-neutral-900/50 cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm h-12 aspect-square border border-neutral-800/50 shadow-md group relative">
+        <li className="bg-neutral-900/50 cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm h-12 aspect-square shadow-md group relative">
             <a href={href} target="_blank" className="w-full h-full grid place-items-center" onContextMenu={e => {
                 e.preventDefault()
                 
@@ -67,18 +67,18 @@ export default function Utils() {
     )
 
     return (
-        <section className="border-b border-neutral-700/50 flex flex-row justify-between items-center p-2">
+        <section className="border-b border-neutral-800/50 flex flex-row justify-between items-center p-2">
 
             {/* MUSIC OPTIONS */}
             <div>
                 <div className="w-80 relative grid place-items-center shadow-md" onClick={() => setDropdown(prev => !prev)}>
-                    <div className="flex flex-row justify-between items-center w-full z-20 border border-neutral-800/50 py-2 px-4 h-12 bg-neutral-900/50 cursor-pointer rounded-sm">
+                    <div className="flex flex-row justify-between items-center w-full z-20 py-2 px-4 h-12 bg-neutral-900/50 cursor-pointer rounded-sm">
                         <p className="text-white">♫ &gt; {getKeyByValue(streams, selectedStream).toUpperCase()}</p>
                         <Image src={ArrowIcon} width={25} height={25} className={`invert ${dropdown ? 'rotate-90' : 'rotate-0'} duration-300 ease-out`} />
                     </div>
                     {dropdown && (
                         <>
-                            <ul className="absolute text-white z-20 overflow-hidden border fade-in border-neutral-800/50 bg-neutral-800/20 backdrop-blur-xl shadow-md rounded-sm top-full left-0 w-full flex flex-col mt-1">
+                            <ul className="absolute text-white z-20 overflow-hidden border fade-in border-neutral-800/20 bg-neutral-800/20 backdrop-blur-xl shadow-md rounded-sm top-full left-0 w-full flex flex-col mt-1">
                                 {streams.map((e, i) => (
                                     <li key={i} className="px-4 py-2 hover:bg-neutral-300/5 duration-50" onClick={() => setSelectedStream(e.id)}>{e.title}</li>
                                 ))}
@@ -112,7 +112,7 @@ export default function Utils() {
 
             {promptsModal && (
                 <div className="absolute w-screen h-screen top-0 left-0 brightness-90 backdrop-blur-md z-20 blur-in grid place-items-center" onClick={() => { if (promptsModal == true) setPromptsModal(false) }}>
-                    <ul className="bg-neutral-900 border border-neutral-800 rounded-md text-white/70 w-[500px] pop-fade-in">
+                    <ul className="bg-neutral-900 border border-neutral-800/50 rounded-md text-white/70 w-[500px] pop-fade-in">
                         {prompts.map((el, i) => (
                             <li key={i} className="hover:bg-black/10 px-8 py-5 text-white/80 hover:text-white duration-150 cursor-pointer" onClick={(e) => {
                                 e.preventDefault()

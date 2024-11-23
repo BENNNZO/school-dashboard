@@ -8,7 +8,7 @@ export default function ClassSection(props) {
     const { title, checklist } = props
     
     return (
-        <section className="bg-neutral-950 w-full flex flex-col justify-between" onContextMenu={e => e.preventDefault()}>
+        <section className="bg-black w-full flex flex-col justify-between" onContextMenu={e => e.preventDefault()}>
             <div>
                 <div className="relative">
                     {
@@ -17,7 +17,7 @@ export default function ClassSection(props) {
                     <h2 className={`text-center text-white font-semibold text-2xl py-3 ${checklist && checklistToggle && "relative z-20"} z-0`} onClick={() => setChecklistToggle(prev => !prev)}>{title}</h2>
                     {
                         checklist &&
-                        <ul className={`pointer-events-none backdrop-blur-lg text-white absolute top-full left-1/2 -translate-x-1/2 z-20 rounded-sm backdrop-brightness-50 border border-neutral-800/50 ${checklistToggle ? 'pop-fade-in' : 'pop-fade-out'}`}>
+                        <ul className={`pointer-events-none backdrop-blur-lg text-white absolute top-full left-1/2 -translate-x-1/2 z-20 rounded-sm backdrop-brightness-50 ${checklistToggle ? 'pop-fade-in' : 'pop-fade-out'}`}>
                             {checklist.map((item, index) => (
                                 <li key={index} className="px-4 py-2">
                                     {item}
