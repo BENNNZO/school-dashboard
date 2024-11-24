@@ -129,3 +129,23 @@
         transform: translateY(0px);
     }
 }
+
+  
+.animate-gradient-text {
+    @apply  bg-clip-text  text-transparent;
+    background-image: linear-gradient(to right, rgb(133, 133, 133) 35%, white 50%, rgb(133, 133, 133) 65%);
+    background-size: 150% 150%;
+    animation: gradient 5s linear infinite;
+}
+
+@keyframes gradient {
+    0% {
+      background-position: 300% 50%;
+    }
+    /* 50% {
+      background-position: 100% 50%;
+    } */
+    100% {
+      background-position: 0% 50%;
+    }
+}

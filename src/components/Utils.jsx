@@ -67,7 +67,7 @@ export default function Utils() {
     )
 
     return (
-        <section className="border-b border-neutral-800/50 flex flex-row justify-between items-center p-2">
+        <section className="border-b border-neutral-900 flex flex-row justify-between items-center p-2">
 
             {/* MUSIC OPTIONS */}
             <div>
@@ -112,7 +112,7 @@ export default function Utils() {
 
             {promptsModal && (
                 <div className="absolute w-screen h-screen top-0 left-0 brightness-90 backdrop-blur-md z-20 blur-in grid place-items-center" onClick={() => { if (promptsModal == true) setPromptsModal(false) }}>
-                    <ul className="bg-neutral-900 border border-neutral-800/50 rounded-md text-white/70 w-[500px] pop-fade-in">
+                    <ul className="bg-neutral-900 border border-neutral-900 rounded-md text-white/70 w-[500px] pop-fade-in">
                         {prompts.map((el, i) => (
                             <li key={i} className="hover:bg-black/10 px-8 py-5 text-white/80 hover:text-white duration-150 cursor-pointer" onClick={(e) => {
                                 e.preventDefault()
