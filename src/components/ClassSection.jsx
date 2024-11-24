@@ -1,7 +1,7 @@
 import TodoList from "./TodoList"
 
 export default function ClassSection(props) {
-    const { title, checklist } = props
+    const { title } = props
     
     return (
         <section className="bg-black w-full flex flex-col justify-between">

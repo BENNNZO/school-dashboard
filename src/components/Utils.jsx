@@ -4,8 +4,7 @@ import { useState, useEffect } from "react"
 import YouTube from "react-youtube"
 import Image from "next/image"
 
-import { ArrowIcon, MailIcon, ChatGPTIcon, PortalIcon, CopyIcon, CheckIcon, PairDropIcon, UndetectableIcon, GhostIcon, HumanizeAIIcon } from '/public/assets'
-import { SSG_FALLBACK_EXPORT_ERROR } from "next/dist/lib/constants"
+import { ArrowIcon, MailIcon, ChatGPTIcon, PortalIcon, CheckIcon, PairDropIcon } from '/public/assets'
 
 export default function Utils() {
     const [selectedStream, setSelectedStream] = useState("jfKfPfyJRdk")
@@ -38,15 +37,6 @@ export default function Utils() {
     function getKeyByValue(array, value) {
         const foundObject = array.find(obj => obj.id === value)
         return foundObject ? foundObject.title : null
-    }
-
-    function hoverText(title) {
-        return (
-            <div className="group-hover:inline-block hidden fade-in bg-neutral-900 text-white absolute bottom-full left-1/2 -translate-x-1/2 -translate-y-2 drop-shadow-lg rounded-sm whitespace-nowrap px-1 pop-in">
-                <div className="w-3 h-3 bg-neutral-900 absolute top-full left-1/2 -translate-x-1/2 -translate-y-2.5 rotate-45 rounded-sm -z-10"></div>
-                <p className="z-10">{title}</p>
-            </div>
-        )
     }
 
     const IconButton = ({ href, icon, name }) => (
@@ -93,10 +83,6 @@ export default function Utils() {
             {/* QUICK LINKS */}
             <ul className="flex flex-row gap-2">
                 <IconButton href="https://chatgpt.com" icon={ChatGPTIcon} name={"AI"} />
-                {/* <IconButton href="https://www.humanizeai.pro/" icon={HumanizeAIIcon} name={"HumanizeAI"} /> */}
-                {/* <IconButton href="https://phrasly.ai/ai-humanizer" icon={ChatGPTIcon} name={"Phrasly"} /> */}
-                {/* <IconButton href="https://undetectable.ai/" icon={UndetectableIcon} name={"AI Checker"} /> */}
-                {/* <IconButton href="https://www.the-ghost-ai.com/" icon={GhostIcon} name={"Ghost AI"} /> */}
                 <IconButton href="https://pairdrop.net/" icon={PairDropIcon} name={"PearDrop"} />
                 <IconButton href="https://outlook.office.com/owa/student.gmc.cc.ga.us" icon={MailIcon} name={"E-Mail"} />
                 <IconButton href="https://selfservice.gmc.cc.ga.us/Student/?hideProxyDialog=false" icon={PortalIcon} name={"Portal"} />
