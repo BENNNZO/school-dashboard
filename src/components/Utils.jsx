@@ -15,7 +15,7 @@ export default function Utils() {
     const prompts = [
         {
             text: "*Engage with a civil discussion forum post by adding to the conversation in a casual, friendly manner. Avoid repeating the original post, sounding condescending, or trying to appear overly intellectual. Keep your response concise and approachable.*"
-        }
+        },
         {
             text: "Write a post similar to these responses. Keep it short, different but similar, and casual. Your response should be nothing but the new post."
         }
