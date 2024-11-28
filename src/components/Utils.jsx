@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import YouTube from "react-youtube"
 import Image from "next/image"
+import IconButton from "./IconButton"
 
 import { ArrowIcon, MailIcon, ChatGPTIcon, PortalIcon, CheckIcon, PairDropIcon } from '/public/assets'
 
@@ -42,23 +43,6 @@ export default function Utils() {
         return foundObject ? foundObject.title : null
     }
 
-    const IconButton = ({ href, icon, name }) => (
-        <li className="bg-neutral-900/50 cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm h-12 aspect-square shadow-md group relative">
-            <a href={href} target="_blank" className="w-full h-full grid place-items-center" onContextMenu={e => {
-                e.preventDefault()
-                
-                if (name === "E-Mail") {
-                    setCopied(true)
-                    navigator.clipboard.writeText("bphillips0826@bulldog.gmc.edu")
-                } else if (name === "AI") {
-                    setPromptsModal(true)
-                }
-            }}>
-                <Image src={icon} width={30} height={30} className="invert" alt={name} />
-            </a>
-        </li>
-    )
-
     return (
         <section className="border-b border-neutral-900 flex flex-row justify-between items-center p-2">
 
@@ -85,9 +69,9 @@ export default function Utils() {
 
             {/* QUICK LINKS */}
             <ul className="flex flex-row gap-2">
-                <IconButton href="https://chatgpt.com" icon={ChatGPTIcon} name={"AI"} />
+                <IconButton href="https://chatgpt.com" icon={ChatGPTIcon} name={"AI"} setPromptsModal={setPromptsModal} />
                 <IconButton href="https://pairdrop.net/" icon={PairDropIcon} name={"PearDrop"} />
-                <IconButton href="https://outlook.office.com/owa/student.gmc.cc.ga.us" icon={MailIcon} name={"E-Mail"} />
+                <IconButton href="https://outlook.office.com/owa/student.gmc.cc.ga.us" icon={MailIcon} name={"E-Mail"} setCopied={setCopied} />
                 <IconButton href="https://selfservice.gmc.cc.ga.us/Student/?hideProxyDialog=false" icon={PortalIcon} name={"Portal"} />
             </ul>
 
@@ -99,6 +83,7 @@ export default function Utils() {
                 </div>
             )}
 
+            {/* PROMPT MODAL */}
             {promptsModal && (
                 <div className="absolute w-screen h-screen top-0 left-0 brightness-90 backdrop-blur-md z-20 blur-in grid place-items-center" onClick={() => { if (promptsModal == true) setPromptsModal(false) }}>
                     <ul className="bg-neutral-900 border border-neutral-900 rounded-md text-white/70 w-[500px] pop-fade-in">
