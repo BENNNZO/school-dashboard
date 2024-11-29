@@ -4,7 +4,7 @@ export default function IconButton(props) {
     const { href, icon, name, setCopied, setPromptsModal } = props
     
     return (
-        <li className="bg-neutral-900/50 cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm h-12 aspect-square shadow-md group relative">
+        <li className="bg-neutral-900/70 cursor-pointer hover:bg-neutral-900 duration-100 rounded-sm h-12 aspect-square shadow-md group relative">
             <a href={href} target="_blank" className="w-full h-full grid place-items-center" onContextMenu={e => {
                 e.preventDefault()
                 

@@ -49,7 +49,7 @@ export default function Utils() {
             {/* MUSIC OPTIONS */}
             <div>
                 <div className="w-80 relative grid place-items-center shadow-md" onClick={() => setDropdown(prev => !prev)}>
-                    <div className="flex flex-row justify-between items-center w-full z-20 py-2 px-4 h-12 bg-neutral-900/50 cursor-pointer rounded-sm">
+                    <div className="flex flex-row justify-between items-center w-full z-20 py-2 px-4 h-12 bg-neutral-900/70 cursor-pointer rounded-sm">
                         <p className="text-white">♫ &gt; {getKeyByValue(streams, selectedStream).toUpperCase()}</p>
                         <Image src={ArrowIcon} width={25} height={25} className={`invert ${dropdown ? 'rotate-90' : 'rotate-0'} duration-300 ease-out`} />
                     </div>
@@ -75,7 +75,7 @@ export default function Utils() {
                 <IconButton href="https://selfservice.gmc.cc.ga.us/Student/?hideProxyDialog=false" icon={PortalIcon} name={"Portal"} />
             </ul>
 
-            {/* UTIL UTILITES */}
+            {/* COPY MESSAGE */}
             {copied && (
                 <div className="fixed top-5 right-5 text-white bg-green-400 z-30 flex flex-row gap-2 px-2 py-1 rounded-sm slide-in-top pop-in fade-in">
                     <Image src={CheckIcon} width={15} height={15} alt="check" className="grayscale brightness-0 invert scale-125" />
@@ -86,7 +86,7 @@ export default function Utils() {
             {/* PROMPT MODAL */}
             {promptsModal && (
                 <div className="absolute w-screen h-screen top-0 left-0 brightness-90 backdrop-blur-md z-20 blur-in grid place-items-center" onClick={() => { if (promptsModal == true) setPromptsModal(false) }}>
-                    <ul className="bg-neutral-900 border border-neutral-900 rounded-md text-white/70 w-[500px] pop-fade-in">
+                    <ul className="bg-neutral-900/70 border border-neutral-900 rounded-md text-white/70 w-[500px] pop-fade-in">
                         {prompts.map((el, i) => (
                             <li key={i} className="hover:bg-black/10 px-8 py-5 text-white/80 hover:text-white duration-150 cursor-pointer" onClick={(e) => {
                                 e.preventDefault()

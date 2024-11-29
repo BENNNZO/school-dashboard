@@ -71,7 +71,7 @@ export default function TodoList(props) {
     }
 
     return (
-        <section className="bg-neutral-900/50 rounded-sm mx-2 mb-2 text-white shadow-md" onContextMenu={e => e.preventDefault()}>
+        <section className="bg-neutral-900/70 rounded-sm mx-2 mb-2 text-white shadow-md" onContextMenu={e => e.preventDefault()}>
             <div className="flex flex-row justify-between p-2">
                 <h2 className="font-bold tracking-wide" onDoubleClick={() => console.log(resetList())}>Todo</h2>
                 <Image
