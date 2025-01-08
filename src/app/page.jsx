@@ -22,8 +22,8 @@ export default function Home() {
 					</ClassSection>
 
 					<ClassSection title={"English III"}>
-						{/* <QuickLink title={"Moodle"} link="https://gmc.mrooms3.net/course/view.php?id=83608" /> */}
-						{/* <QuickLink title={"Syllabus"} link="https://gmc.mrooms3.net/mod/book/view.php?id=7320550&chapterid=476966" /> */}
+						<QuickLink title={"Canvas"} link="https://gmcusa.instructure.com/courses/1522" />
+						<QuickLink title={"Syllabus"} link="https://gmcusa.instructure.com/courses/1522/pages/course-schedule-2" />
 					</ClassSection>
 				</div>
 			</div>
