@@ -11,19 +11,22 @@ export default function Home() {
 				</h1>
 				<Utils />
 				<div className="flex flex-row h-full justify-around gap-px bg-neutral-800/50">
-					<ClassSection title={"Pre-Calculus"}>
-						<QuickLink title={"Moodle"} link="https://gmc.mrooms3.net/course/view.php?id=86105" />
-						<QuickLink title={"Syllabus"} link="https://gmc.mrooms3.net/mod/book/view.php?id=7552148&chapterid=509163" />
+					<ClassSection title={"English 102"}>
+						<QuickLink title={"Modules"} link="https://gmcusa.instructure.com/courses/2936/modules" />
+						<QuickLink title={"Syllabus"} link="https://gmcusa.instructure.com/courses/2936/assignments/syllabus" />
+						<QuickLink title={"Grades"} link="https://gmcusa.instructure.com/courses/2936/grades" />
 					</ClassSection>
 
-					<ClassSection title={"American Government"}>
-						<QuickLink title={"Moodle"} link="https://gmc.mrooms3.net/course/view.php?id=86139" />
-						<QuickLink title={"Syllabus"} link="https://gmc.mrooms3.net/mod/book/view.php?id=7556846&chapterid=509787" />
+					<ClassSection title={"Intro To Computer Science"}>
+						<QuickLink title={"Modules"} link="https://gmcusa.instructure.com/courses/2928/modules" />
+						<QuickLink title={"Syllabus"} link="https://gmcusa.instructure.com/courses/2928/assignments/syllabus" />
+						<QuickLink title={"Grades"} link="https://gmcusa.instructure.com/courses/2928/grades" />
 					</ClassSection>
 
-					<ClassSection title={"English III"}>
-						<QuickLink title={"Canvas"} link="https://gmcusa.instructure.com/courses/1522" />
-						<QuickLink title={"Syllabus"} link="https://gmcusa.instructure.com/courses/1522/pages/course-schedule-2" />
+					<ClassSection title={"Wellness"}>
+						<QuickLink title={"Modules"} link="https://gmcusa.instructure.com/courses/2907/modules" />
+						<QuickLink title={"Syllabus"} link="https://gmcusa.instructure.com/courses/2907/assignments/syllabus" />
+						<QuickLink title={"Grades"} link="https://gmcusa.instructure.com/courses/2907/grades" />
 					</ClassSection>
 				</div>
 			</div>
@@ -31,6 +34,22 @@ export default function Home() {
 	)
 }
 
+// ------------------------------------------------------------------------------------------------------
+// YEAR 1 | QUARTER 3 -----------------------------------------------------------------------------------
+
+// Pre-Calculus
+// Moodle: https://gmc.mrooms3.net/course/view.php?id=86105
+// Syllabus: https://gmc.mrooms3.net/mod/book/view.php?id=7552148&chapterid=509163
+
+// American Government
+// Moodle: https://gmc.mrooms3.net/course/view.php?id=86139
+// Syllabus: https://gmc.mrooms3.net/mod/book/view.php?id=7556846&chapterid=509787
+
+// English III
+// Canvas: https://gmcusa.instructure.com/courses/1522
+// Syllabus: https://gmcusa.instructure.com/courses/1522/pages/course-schedule-2
+
+// ------------------------------------------------------------------------------------------------------
 // YEAR 1 | QUARTER 2 -----------------------------------------------------------------------------------
 
 // Algebra
