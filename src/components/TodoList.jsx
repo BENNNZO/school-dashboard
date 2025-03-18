@@ -83,6 +83,8 @@ export default function TodoList(props) {
                     onClick={() => {
                         let text = prompt("TODO")
 
+                        if (text == null || text == "") return
+
                         setList(prev => [...prev, { text, color: null }])
                     }}
                 />
