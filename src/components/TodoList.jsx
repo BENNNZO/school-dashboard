@@ -36,7 +36,7 @@ export default function TodoList(props) {
     }, [list])
 
     function resetList() {
-        setList([{ text: "Civil Discourse Forum Post", color: null }, { text: "Forum Response 2", color: null }, { text: "Forum Response 2", color: null }, { text: "-- Add Others", color: null  }])
+        setList([{ text: "Civil Discourse Forum Post", color: null }, { text: "Forum Response 1", color: null }, { text: "Forum Response 2", color: null }, { text: "-- Add Others", color: null  }])
     }
 
     function handleMouseDown(e) {
